@@ -99,6 +99,8 @@ async function handleNewDbs(store,{dbs, DBCores, autobase, newDBExt} = {}) {
   }
 }
 ```
+##Note:
+3,4 and 5 in HelloPeers were handled by Hyper-SDK.
 
 
 
