@@ -1,5 +1,6 @@
 # HelloPears
 A desktop version of [Hello Peers](https://github.com/jermsam/hello-peers) running on Holepunch's recently released [PEER RUNTIME](https://pears.com/)
+![alt text](public/preview.jpeg)
 ## Key Differences:
 1. No need for a relay websocket server
 2. For Native apps
