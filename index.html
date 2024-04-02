@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body > h1:nth-of-type(1) {
+      cursor: pointer
+    }
+
+    body {
+      --title-bar-height: 42px;
+      padding-top: var(--title-bar-height);
+    }
+
+    #bar {
+      background: rgba(55, 60, 72, 0.6);
+      backdrop-filter: blur(64px);
+      -webkit-app-region: drag;
+      height: var(--title-bar-height);
+      padding: 0;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      color: #FFF;
+      white-space: nowrap;
+      box-sizing: border-box;
+      position: fixed;
+      z-index: 2;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    pear-ctrl[data-platform=darwin] {
+      margin-top: 18px;
+      margin-left: 12px;
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="https://www.gitbook.com/cdn-cgi/image/width=256,dpr=2,height=40,fit=contain,format=auto/https%3A%2F%2F3034099378-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FwOfFLUsmIfwVeziNLfS7%252Flogo%252FeZx69XU0KlWWoJUNw1P6%252FLogo.png%3Falt%3Dmedia%26token%3Daae5f3cb-0dd0-4156-8fc1-4454f5989dff"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hello Todo| Hypercore, Hyperbee, Autobase, Hyperdeebee, Hyperswarm, HyperDHT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script type="module" src="scripts/app.js"></script>
+</head>
+<body>
+  <div id="bar"><pear-ctrl></pear-ctrl></div>
+  <section class="p-10">
+
+    <dialog id="todo-dialog" class="rounded-2xl shadow-2xl">
+      <div class="bg-[#2A2C35] text-white p-10 min-w-[300px] relative">
+        <svg id="todo-dialog-close-button"
+             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+             class="h-6 w-6 absolute right-1 top-1 cursor-pointer">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+
+        <div class="flex flex-col gap-2">
+          <h3 class="text-2xl">Add Item</h3>
+          <form id="todo-form">
+            <div>
+              <label>
+            <textarea
+                id="todo-text"
+                class="focus:ring-2 focus:ring-gray-950 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm"
+            >
+
+            </textarea>
+              </label>
+              <div class='text-red-400' id="todo-error"></div>
+            </div>
+            <div class="flex justify-end mt-5">
+              <button type="submit"
+                      class="h-5 px-5 py-4  font-semibold rounded-md text-white bg-[#131315]  flex items-center cursor-pointer shadow-2xl hover:shadow">
+                Add
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+
+    <div class=" pt-12 pr-0 pb-12 pl-0 mt-0 mr-auto mb-0 ml-auto sm:py-16 lg:py-20">
+      <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class=" pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto max-w-4xl sm:px-6 lg:px-8">
+          <div class=" pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto sm:flex sm:items-center sm:justify-between">
+            <div>
+              <p class="text-xl font-bold text-white">Today's Tasks</p>
+            </div>
+            <button
+                class="h-5 px-5 py-4  font-semibold rounded-md bg-[#2A2C35] text-white flex items-center cursor-pointer shadow-2xl hover:shadow"
+                id="todo-dialog-open-button"
+            >
+              Add Task
+            </button>
+           <!-- <div class="mt-4 mr-0 mb-0 ml-0 sm:mt-0">
+              <p class="sr-only">Search Tasks</p>
+              <div class="relative">
+                <div class="flex items-center pt-0 pr-0 pb-0 pl-3 absolute inset-y-0 left-0 pointer-events-none">
+                  <p>
+                    <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24"
+                         stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21
+                    21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                  </p>
+                </div>
+                <label>
+                  <input placeholder="Search Tasks " type="search" class="border block pt-2 pr-0 pb-2 pl-10 w-full py-2
+                  pl-10 border border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"/>
+                </label>
+              </div>
+            </div>-->
+          </div>
+          <div class="text-white bg-[#2A2C35] shadow-xl mt-8 mr-0 mb-0 ml-0 pt-4 pr-10 pb-4 pl-10 flow-root rounded-lg sm:py-2">
+            <div class="pt--10 pr-0 pb-10 pl-0" id="todo-list">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

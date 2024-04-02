@@ -1,0 +1,40 @@
+{
+  "name": "todo",
+  "main": "index.html",
+  "type": "module",
+  "pear": {
+    "name": "todo",
+    "type": "desktop",
+    "gui": {
+      "backgroundColor": "#1F2430",
+      "height": 540,
+      "width": 720
+    }
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "brittle": "^3.0.0"
+  },
+  "dependencies": {
+    "@hyperswarm/dht-relay": "^0.4.3",
+    "@lejeunerenard/hyperbee-range-watcher-autobase": "github:lejeunerenard/hyperbee-range-watcher-autobase",
+    "autobase": "^6.0.0-rc6",
+    "b4a": "^1.6.6",
+    "bson": "^6.5.0",
+    "corestore": "^6.18.1",
+    "events": "^3.3.0",
+    "graceful-goodbye": "^1.3.0",
+    "hyperbee": "^2.18.2",
+    "hyperdeebee": "github:Telios-org/hyperdeebee",
+    "hyperdht": "^6.13.1",
+    "hyperswarm": "^4.7.14",
+    "random-access-application": "^2.0.1",
+    "random-access-memory": "^6.2.1"
+  },
+  "scripts": {
+    "dev": "pear dev",
+    "stage": "pear stage dev",
+    "seed": "npm run stage && pear seed dev",
+    "test": "brittle test/*.test.js"
+  }
+}
