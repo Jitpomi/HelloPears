@@ -13,7 +13,10 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "brittle": "^3.0.0"
+    "autoprefixer": "^10.4.19",
+    "brittle": "^3.0.0",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.3"
   },
   "dependencies": {
     "@hyperswarm/dht-relay": "^0.4.3",
@@ -32,7 +35,8 @@
     "random-access-memory": "^6.2.1"
   },
   "scripts": {
-    "dev": "pear dev",
+    "build-css": "postcss ./styles/input.css -o ./public/styles/output.css ",
+    "dev": "npm run build-css && pear dev --watch",
     "stage": "pear stage dev",
     "seed": "npm run stage && pear seed dev",
     "test": "brittle test/*.test.js"
